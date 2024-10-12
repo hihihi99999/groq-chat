@@ -10,7 +10,7 @@ load_dotenv(Path(__file__).parent / ".env")
 
 class GroqAPI:
     def __init__(self, model_name: str):
-        self.client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+        self.client = Groq(api_key=st.secrets["secret_keys"]["groq_api_key"])
         self.model_name = model_name
 
     def _response(self, message):
